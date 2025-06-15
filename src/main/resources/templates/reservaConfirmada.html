@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Reserva Confirmada</title>
+  <style>
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      letter-spacing: 1px;
+    }
+
+    div.container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 20px 0;
+      color: #2c3e50;
+    }
+
+    span {
+      font-weight: 600;
+      color: #34495e;
+    }
+
+    .mensaje {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #16a085;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Reserva Confirmada</h1>
+
+<div class="container">
+
+  <p class="mensaje">Gracias por realizar su reserva.</p>
+
+  <p>Nombre: <span th:text="${reserva.usuario.nombre}"></span></p>
+  <p>Apellido: <span th:text="${reserva.usuario.apellido}"></span></p>
+  <p>Vuelo: <span th:text="${reserva.vuelo.origen}"></span> - <span th:text="${reserva.vuelo.destino}"></span></p>
+  <p>Aerolínea: <span th:text="${reserva.vuelo.aerolinea.nombre}"></span></p>
+  <p>Monto pagado: $<span th:text="${reserva.pago.cantidadPago}"></span></p>
+
+</div>
+
+</body>
+</html>
